@@ -34,7 +34,7 @@
     <hr>
     <div id="cast">
         <div *ngFor="let c of cast" id="each">
-            <img src="http://image.tmdb.org/t/p/w500{{c.profile_path}}"><br>
+            <img src="{{c.profile_path}}"><br>
             {{c.name}}
         </div>
     </div>

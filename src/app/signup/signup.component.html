@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+</head>
+<body>
+    <div id="whole">
+        <h1>Signup </h1><br>
+        
+        <form [formGroup]="form" (ngSubmit)="check()">
+            <div id="grid">
+                <label for="name"> Username : </label>
+                <div>
+                    <input type="text" id="inp" formControlName="name" [(ngModel)]="nv"><br>
+                    <span>{{name}}</span><br><br>
+                </div>
+            </div>
+
+            <div id="grid">
+                <label for="email">E-mail : </label>
+                <div>
+                    <input type="email" id="inp" formControlName="email" [(ngModel)]="ev"><br>
+                    <span>{{email}}</span><br><br>
+                </div>
+            </div>
+
+            <div id="grid">
+                <label for="password">Password : </label>
+                <div>
+                    <input type="password" id="inp" formControlName="password" [(ngModel)]="pv"><br>
+                    <span>{{password}}</span><br><br>
+                </div>
+            </div>
+
+            <div id="grid">
+                <label for="c-password">Confirm Password : </label>
+                <div>
+                    <input type="password" id="inp" formControlName="cpassword"><br>
+                    <span>{{cp}}</span><br><br>
+                </div>
+            </div>
+
+            <input type="submit" value="SUBMIT" id="button">
+        </form>
+    </div>
+   
+</body>
+</html>
+
+

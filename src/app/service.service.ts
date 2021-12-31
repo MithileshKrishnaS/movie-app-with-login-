@@ -12,18 +12,9 @@ export class ServiceService {
   api="/videos?api_key=6d2c78626225c1e815032b5fe6c1b26d&language";
   key="?api_key=6d2c78626225c1e815032b5fe6c1b26d&"
   id:number=0;
-
+  users:any=[];
+  value:any=false;
   constructor(private http:HttpClient) { }
-  //id=this.home.id;
-  // getmoviess()
-  // {
-  //   this.http.get('https://api.themoviedb.org/3/movie/now_playing?api_key=6d2c78626225c1e815032b5fe6c1b26d&language=en-US&page=1').subscribe(movie=> {
-  //     this.movie=movie;
-  //     //console.log(this.movie.results);
-  //     //console.log(movie)
-  //     return movie;
-  //   })
-  // }
 
   getmovies()
   {
@@ -39,8 +30,6 @@ export class ServiceService {
     if(lang==="Portuguese")
     {
       this.second="=pt-BR&page=1";
-      
-      //console.log(this.second)
     }
     if(lang==="English")
     {
@@ -55,19 +44,34 @@ export class ServiceService {
 
   gotmovieid(id:any)
   {
-    
     this.id=id;
-    
   }
 
   getmovieid()
   {
-   // console.log('id :'+this.id);
     return this.http.get(this.movie+this.id+this.api+this.second);
   }
 
   getdetails(){
     console.log(this.movie+this.id+this.key)
     return this.http.get(this.movie+this.id+this.key+'append_to_response=credits');
+  }
+
+  auth(value:any)
+  {
+    this.value=value;
+  }
+  getusers()
+  {
+    return this.http.get('http://localhost:3000/User');
+  }
+
+  login()
+  {
+    if(this.value)
+    {
+      return true;
+    }
+    return false;
   }
 }

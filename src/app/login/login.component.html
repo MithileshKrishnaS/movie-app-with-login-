@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+<body>
+    <div id="whole">
+        <h1>Login</h1>
+        
+        <form [formGroup]="form" (ngSubmit)="check()">
+            <div id="grid">
+                <label for="name">Name : </label>
+                <input type="text" formControlName="name" id="inp"><br><br>
+            </div>
+            <div id="grid">
+                <label for="pass">Password : </label>
+                <input type="password" formControlName="password" id="inp"><br>
+            </div>
+            <span>{{string}}</span><br><br>
+            <div id="grid">
+                <input type="submit" value="LOGIN" id="button">
+                <input type="submit" value="SIGNUP" (click)="signup()" id="button">
+            </div>   
+        </form>
+        
+    </div>
+</body>
+</html>

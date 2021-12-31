@@ -25,6 +25,14 @@ export class MymovieComponent implements OnInit {
   for(let i=0;i<13;i++)
     {
       this.cast.push(this.details.credits.cast[i])
+      if(this.cast[i].profile_path==null)
+      {
+        this.cast[i].profile_path="assets/images/img.png"
+      }
+      else{
+        this.cast[i].profile_path="http://image.tmdb.org/t/p/w500"+this.cast[i].profile_path;
+      }
+      console.log(this.cast[i].profile_path)
     }
   })
   }
